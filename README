@@ -4,3 +4,4 @@ I am trying to use
 method to store config files in a bare git repo.
 [Nicola Paolucci](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
 has a nice blog post about the method.
+
