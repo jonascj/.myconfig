@@ -56,6 +56,32 @@ set colorcolumn=80
 " Wrap but do not insert linebreaks
 autocmd FileType latex,tex set wrap linebreak nolist textwidth=0 wrapmargin=0
 
+
+"""""""""""
+" Plugins "
+"""""""""""
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
+
+
+" Shorthand notation; fetches https://github.com/user/repo
+" Plug 'user/repo'
+
+Plug 'lervag/vimtex'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'elmanuelito/vim-matlab-behave'  
+" Initialize plugin system
+call plug#end()
+
+
 """"""""""""""""""
 " Buffers / tabs "
 """"""""""""""""""
@@ -84,24 +110,6 @@ nnoremap <leader>bq :bdelete<CR>
 nnoremap <leader>bl :ls<CR>
 
 
-"""""""""""
-" Plugins "
-"""""""""""
-
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
-call plug#begin('~/.vim/plugged')
-
-
-" Shorthand notation; fetches https://github.com/user/repo
-" Plug 'user/repo'
-
-Plug 'lervag/vimtex'
-Plug 'Valloric/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'elmanuelito/vim-matlab-behave'  
-" Initialize plugin system
-call plug#end()
 
 
 """"""""""
