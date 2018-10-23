@@ -1,0 +1,285 @@
+[global]
+    font = Inconsolata 11
+    
+    # Allow a small subset of html markup:
+    #   <b>bold</b>
+    #   <i>italic</i>
+    #   <s>strikethrough</s>
+    #   <u>underline</u>
+    # 
+    # For a complete reference see
+    # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
+    # If markup is not allowed, those tags will be stripped out of the
+    # message.
+    allow_markup = yes
+    
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    # Markup is allowed
+    format = "<b>%s</b>\n%b"
+    
+    # Sort messages by urgency.
+    sort = yes
+    
+    # Show how many messages are currently hidden (because of geometry).
+    indicate_hidden = yes
+    
+    # Alignment of message text.
+    # Possible values are "left", "center" and "right".
+    alignment = right 
+    
+    # The frequency with wich text that is longer than the notification
+    # window allows bounces back and forth.
+    # This option conflicts with "word_wrap".
+    # Set to 0 to disable.
+    bounce_freq = 0
+    
+    # Show age of message if message is older than show_age_threshold
+    # seconds.
+    # Set to -1 to disable.
+    show_age_threshold = 60
+    
+    # Split notifications into multiple lines if they don't fit into
+    # geometry.
+    word_wrap = yes
+    
+    # Ignore newlines '\n' in notifications.
+    ignore_newline = no
+    
+    
+    # The geometry of the window:
+    #   [{width}]x{height}[+/-{x}+/-{y}]
+    # The geometry of the message window.
+    # The height is measured in number of notifications everything else
+    # in pixels.  If the width is omitted but the height is given
+    # ("-geometry x2"), the message window expands over the whole screen
+    # (dmenu-like).  If width is 0, the window expands to the longest
+    # message displayed.  A positive x is measured from the left, a
+    # negative from the right side of the screen.  Y is measured from
+    # the top and down respectevly.
+    # The width can be negative.  In this case the actual width is the
+    # screen width minus the width defined in within the geometry option.
+    geometry = "0x5-0+20"
+    
+    # Shrink window if it's smaller than the width.  Will be ignored if
+    # width is 0.
+    shrink = no
+    
+    # The transparency of the window.  Range: [0; 100].
+    # This option will only work if a compositing windowmanager is
+    # present (e.g. xcompmgr, compiz, etc.).
+    transparency = 0
+    
+    # Don't remove messages, if the user is idle (no mouse or keyboard input)
+    # for longer than idle_threshold seconds.
+    # Set to 0 to disable.
+    idle_threshold = 120
+    
+    # Which monitor should the notifications be displayed on.
+    monitor = 0
+    
+    # Display notification on focused monitor.  Possible modes are:
+    #   mouse: follow mouse pointer
+    #   keyboard: follow window with keyboard focus
+    #   none: don't follow anything
+    # 
+    # "keyboard" needs a windowmanager that exports the
+    # _NET_ACTIVE_WINDOW property.
+    # This should be the case for almost all modern windowmanagers.
+    # 
+    # If this option is set to mouse or keyboard, the monitor option
+    # will be ignored.
+    follow = mouse
+    
+    # Should a notification popped up from history be sticky or timeout
+    # as if it would normally do.
+    sticky_history = yes
+    
+    # Maximum amount of notifications kept in history
+    history_length = 20
+    
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+    
+    # The height of a single line.  If the height is smaller than the
+    # font height, it will get raised to the font height.
+    # This adds empty space above and under the text.
+    line_height = 0
+    
+    # Draw a line of "separatpr_height" pixel height between two
+    # notifications.
+    # Set to 0 to disable.
+    separator_height = 2 
+    
+    # Padding between text and separator.
+    padding = 8
+    
+    # Horizontal padding.
+    horizontal_padding = 8
+    
+    # Define a color for the separator.
+    # possible values are:
+    #  * auto: dunst tries to find a color fitting to the background;
+    #  * foreground: use the same color as the foreground;
+    #  * frame: use the same color as the frame;
+    #  * anything else will be interpreted as a X color.
+    separator_color = frame
+    
+    # Print a notification on startup.
+    # This is mainly for error detection, since dbus (re-)starts dunst
+    # automatically after a crash.
+    startup_notification = false
+    
+    # dmenu path.
+    dmenu = /usr/bin/dmenu -p dunst:
+    
+    # Browser for opening urls in context menu.
+    browser = /usr/bin/firefox -new-tab
+
+    # Align icons left/right/off
+    icon_position = off
+
+    # Paths to default icons.
+    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+[frame]
+    width = 2 
+    color = "#eee8d5"
+
+[shortcuts]
+
+    # Shortcuts are specified as [modifier+][modifier+]...key
+    # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
+    # "mod3" and "mod4" (windows-key).
+    # Xev might be helpful to find names for keys.
+    
+    # Close notification.
+    close = ctrl+space
+    
+    # Close all notifications.
+    close_all = ctrl+shift+space
+    
+    # Redisplay last message(s).
+    # On the US keyboard layout "grave" is normally above TAB and left
+    # of "1".
+    history = ctrl+period
+    
+    # Context menu.
+    context = ctrl+shift+period
+
+
+#[urgency_low]
+#    background = "#002b36" # base02
+#    foreground = "#586e75" # base01
+#    timeout = 10
+#
+#[urgency_normal]
+#    background = "#073642" # base02
+#    foreground = "#839496" # base0
+#    timeout = 10
+#    timeout = 10
+#
+#[urgency_critical]
+#    background = "#073642" # base02
+#    foreground = "#dc322f" # base1
+#    timeout = 10
+#
+#   background = "#dc322f" # red
+#    foreground = "#93a1a1" # base1
+#    timeout = 0
+
+# SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
+# --------- ------- ---- -------  ----------- ---------- ----------- -----------
+# base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
+# base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
+# base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
+# base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
+# base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
+# base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
+# base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
+# base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
+# yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
+# orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
+# red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
+# magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
+# violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
+# blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
+# cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
+# green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+
+[urgency_low]
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#002b36" # Solarized base03
+    foreground = "#839496" # base0
+    timeout = 10
+
+[urgency_normal]
+    foreground = "#eee8d5" # Solarized base1
+    background = "#268bd2" # Solarized blue
+    timeout = 10
+
+[urgency_critical]
+    background = "#dc322f" # Solarized red
+    foreground = "#eee8d5" # Solarized base03
+    timeout = 0
+
+
+# Every section that isn't one of the above is interpreted as a rules to
+# override settings for certain messages.
+# Messages can be matched by "appname", "summary", "body", "icon", "category",
+# "msg_urgency" and you can override the "timeout", "urgency", "foreground",
+# "background", "new_icon" and "format".
+# Shell-like globbing will get expanded.
+#
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+# 
+# NOTE: if you don't want a notification to be displayed, set the format
+# to "".
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+#[ignore]
+#    # This notification will not be displayed
+#    summary = "foobar"
+#    format = ""
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+# vim: ft=cfg
